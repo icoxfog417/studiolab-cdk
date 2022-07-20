@@ -1,0 +1,10 @@
+name: cdk
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - ipython
+  - ipykernel
+  - python
+  - pip:
+    - -r file:requirements.txt

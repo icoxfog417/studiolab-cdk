@@ -1,51 +1,36 @@
+# Learn CDK in SageMaker Studio Lab
 
-# Welcome to your CDK Python project!
+[SageMaker Studio Lab](https://studiolab.sagemaker.aws/users/ttaakkaa)で[CDK](https://aws.amazon.com/jp/cdk/)を動かすサンプルです。LambdaによるシンプルなAPI(API Gateway)を構築します。`aws-cdk-examples`の[api-cors-lambda](https://github.com/aws-samples/aws-cdk-examples/tree/master/python/api-cors-lambda)をベースにしています。
 
-This is a blank project for CDK development with Python.
+Studio LabはCDKのハンズオンに適しています。
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+* ハンズオン参加者の環境をそろえることができる。
+* 無料。
+* ターミナルが利用できる。
 
-This project is set up like a standard Python project.  The initialization
-process also creates a virtualenv within this project, stored under the `.venv`
-directory.  To create the virtualenv it assumes that there is a `python3`
-(or `python` for Windows) executable in your path with access to the `venv`
-package. If for any reason the automatic creation of the virtualenv fails,
-you can create the virtualenv manually.
+例えばCloud9を使うハンズオンだと、インスタンスの起動/停止が必要で起動中はもちろん料金がかかります。Studio Labであれば、参加者の環境を共通化しつつ料金が無料で済みます。また、ターミナルが利用できるためcdkのようなコマンドラインベースで進めるハンズオンも実施することができます。
 
-To manually create a virtualenv on MacOS and Linux:
+## Studio Labの準備
 
-```
-$ python3 -m venv .venv
-```
+[Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)に沿って進めます。次の手順で環境を構築してください。
 
-After the init process completes and the virtualenv is created, you can use the following
-step to activate your virtualenv.
+1. Prerequisites: AWS上でCDKに使用するユーザーを作成し、`aws configure`で設定します。
+2. Install the AWS CDK: `conda install nodejs`を実行したのち、`npm install -g aws-cdk`で`aws-cdk`をインストールします。
+3. Bootstrapping: `cdk bootstrap aws://ACCOUNT-NUMBER/REGION`でCDK用のS3バケットを作成します。
 
-```
-$ source .venv/bin/activate
-```
-
-If you are a Windows platform, you would activate the virtualenv like this:
+Studio LabではCondaで環境を構築します。次のコマンドを実行してください。
 
 ```
-% .venv\Scripts\activate.bat
+conda env create -f environment.yml
 ```
 
-Once the virtualenv is activated, you can install the required dependencies.
+以後、`cdk deploy`/`cdk destroy`で構築/削除を行います。
+
+新規にCDKのアプリケーションを開始する時は、次のコマンドを新しいフォルダで実施してください。
 
 ```
-$ pip install -r requirements.txt
+cdk init app --language python
 ```
-
-At this point you can now synthesize the CloudFormation template for this code.
-
-```
-$ cdk synth
-```
-
-To add additional dependencies, for example other CDK libraries, just add
-them to your `setup.py` file and rerun the `pip install -r requirements.txt`
-command.
 
 ## Useful commands
 
