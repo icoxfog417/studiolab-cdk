@@ -5,6 +5,9 @@ dependencies:
   - python
   - ipython
   - ipykernel
+  - graphviz
+  - nodejs
   - python
+  - pip
   - pip:
-    - -r file:requirements.txt
+    - -r requirements.txt

@@ -15,22 +15,17 @@ Studio LabはCDKのハンズオンに適しています。
 [Getting started with the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html)に沿って進めます。次の手順で環境を構築してください。
 
 1. Prerequisites: AWS上でCDKに使用するユーザーを作成し、`aws configure`で設定します。
-2. Install the AWS CDK: `conda install nodejs`を実行したのち、`npm install -g aws-cdk`で`aws-cdk`をインストールします。
-3. Bootstrapping: `cdk bootstrap aws://ACCOUNT-NUMBER/REGION`でCDK用のS3バケットを作成します。
-
-Studio LabではCondaで環境を構築します。次のコマンドを実行してください。
+2. Install the AWS CDK: `conda`で環境を構築し、`aws-cdk`をインストールします。
 
 ```
 conda env create -f environment.yml
 ```
 
-以後、`cdk deploy`/`cdk destroy`で構築/削除を行います。
+終了後、`npm install -g aws-cdk`で`aws-cdk`をインストールします。
 
-新規にCDKのアプリケーションを開始する時は、次のコマンドを新しいフォルダで実施してください。
+これでCDKを実行する環境が整いました。以後は、次のNotebookに従いCDKを実行してください。ボタンを押すとNotebookが開きます。
 
-```
-cdk init app --language python
-```
+[![Open in SageMaker Studio Lab](https://studiolab.sagemaker.aws/studiolab.svg)](https://studiolab.sagemaker.aws/import/github/icoxfog417/studiolab-cdk/blob/main/cdk.ipynb)
 
 ## Useful commands
 
@@ -40,4 +35,8 @@ cdk init app --language python
  * `cdk diff`        compare deployed stack with current state
  * `cdk docs`        open CDK documentation
 
-Enjoy!
+新規にCDKのアプリケーションを開始する時は、次のコマンドを新しいフォルダで実施してください。
+
+```
+cdk init app --language python
+```
